@@ -12,7 +12,21 @@
         $month_end = strtotime("last day of this month", time());
 	$start_week_day = date("D", $month_start);
 	$end_month_day_number = (int)date("d", $month_end);
+
         if (DEBUGGING) {
+            echo "<br /><br /> SERVER: "  . print_r($_SERVER);
+            echo "<br /><br /> ENV: "     . print_r($_ENV);
+            echo "<br /><br /> REQUEST: " . print_r($_REQUEST);
+            echo "<br /><br /> SESSION: " . print_r($_SESSION);
+
+	    $var_test = "hello";
+	    echo "<br />var_test integer: " . is_integer($var_test);
+            settype($var_test, 'array');
+	    echo "<br />var_test is_array: " . is_array($var_test);
+	    echo "<br />var_test is_string: " . is_string($var_test);
+
+            echo "<br />File: " . __FILE__;
+            echo "<br />Line: " . __LINE__;
 	    echo "First day of month: ";
             echo date("Y-m-1");
             echo("<br />");
